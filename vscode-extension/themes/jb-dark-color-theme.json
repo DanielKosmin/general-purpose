@@ -276,6 +276,7 @@
     "gitDecoration.deletedResourceForeground": "#6F737A",
     "gitDecoration.untrackedResourceForeground": "#E88F89",
     "gitDecoration.ignoredResourceForeground": "#6F737A",
+    "jbLook.dimmedForeground": "#6F737A",
     "gitDecoration.conflictingResourceForeground": "#DE6A66",
     "gitDecoration.renamedResourceForeground": "#70AEFF",
     "gitDecoration.stageModifiedResourceForeground": "#70AEFF",

@@ -2,7 +2,7 @@
   "name": "jb-look",
   "displayName": "JB Look — IntelliJ-style Theme & Icons",
   "description": "Dark color theme, file icons and editor settings modeled on the JetBrains New UI.",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "publisher": "local",
   "license": "MIT",
   "private": true,
@@ -20,7 +20,9 @@
     "dark"
   ],
   "main": "./src/extension.js",
-  "activationEvents": [],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "contributes": {
     "themes": [
       {
@@ -46,6 +48,17 @@
         "command": "jbLook.restoreSettings",
         "title": "Restore Settings From Before JB Look",
         "category": "JB Look"
+      }
+    ],
+    "colors": [
+      {
+        "id": "jbLook.dimmedForeground",
+        "description": "Label color for greyed-out dependency/build folders (node_modules, dist, …).",
+        "defaults": {
+          "dark": "#6F737A",
+          "light": "#8C8C8C",
+          "highContrast": "#6F737A"
+        }
       }
     ]
   },

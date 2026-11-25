@@ -668,6 +668,7 @@
   },
   "folderNames": {
     "node_modules": "folder-dimmed",
+    "bower_components": "folder-dimmed",
     "dist": "folder-dimmed",
     "build": "folder-dimmed",
     "out": "folder-dimmed",
@@ -676,6 +677,7 @@
     ".nuxt": "folder-dimmed",
     ".output": "folder-dimmed",
     ".svelte-kit": "folder-dimmed",
+    ".turbo": "folder-dimmed",
     ".cache": "folder-dimmed",
     ".parcel-cache": "folder-dimmed",
     "coverage": "folder-dimmed",
@@ -684,16 +686,15 @@
     ".venv": "folder-dimmed",
     "venv": "folder-dimmed",
     ".tox": "folder-dimmed",
-    ".gradle": "folder-dimmed",
     ".pytest_cache": "folder-dimmed",
     ".mypy_cache": "folder-dimmed",
     ".ruff_cache": "folder-dimmed",
-    ".turbo": "folder-dimmed",
-    "bower_components": "folder-dimmed",
+    ".gradle": "folder-dimmed",
     ".git": "folder-dimmed"
   },
   "folderNamesExpanded": {
     "node_modules": "folder-dimmed-open",
+    "bower_components": "folder-dimmed-open",
     "dist": "folder-dimmed-open",
     "build": "folder-dimmed-open",
     "out": "folder-dimmed-open",
@@ -702,6 +703,7 @@
     ".nuxt": "folder-dimmed-open",
     ".output": "folder-dimmed-open",
     ".svelte-kit": "folder-dimmed-open",
+    ".turbo": "folder-dimmed-open",
     ".cache": "folder-dimmed-open",
     ".parcel-cache": "folder-dimmed-open",
     "coverage": "folder-dimmed-open",
@@ -710,12 +712,10 @@
     ".venv": "folder-dimmed-open",
     "venv": "folder-dimmed-open",
     ".tox": "folder-dimmed-open",
-    ".gradle": "folder-dimmed-open",
     ".pytest_cache": "folder-dimmed-open",
     ".mypy_cache": "folder-dimmed-open",
     ".ruff_cache": "folder-dimmed-open",
-    ".turbo": "folder-dimmed-open",
-    "bower_components": "folder-dimmed-open",
+    ".gradle": "folder-dimmed-open",
     ".git": "folder-dimmed-open"
   }
 }

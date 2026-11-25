@@ -5,6 +5,9 @@
 import { writeFileSync, mkdirSync, rmSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { createRequire } from 'node:module';
+
+const DIMMED_FOLDERS = createRequire(import.meta.url)('../src/dimmed-folders.js');
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = join(ROOT, 'icons');
@@ -236,7 +239,7 @@ const ICONS = [
 // is dependency / build-output folders, which are greyed out the way excluded folders recede in IntelliJ.
 const FOLDERS = [
   { id: 'folder', style: 'plain' },
-  { id: 'folder-dimmed', style: 'dimmed', names: ['node_modules', 'dist', 'build', 'out', 'target', '.next', '.nuxt', '.output', '.svelte-kit', '.cache', '.parcel-cache', 'coverage', '.nyc_output', '__pycache__', '.venv', 'venv', '.tox', '.gradle', '.pytest_cache', '.mypy_cache', '.ruff_cache', '.turbo', 'bower_components', '.git'] },
+  { id: 'folder-dimmed', style: 'dimmed', names: DIMMED_FOLDERS },
 ];
 
 // ---- Emit ----

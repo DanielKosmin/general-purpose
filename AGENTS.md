@@ -10,7 +10,8 @@ All repo-wide files live at the root: this file, `CLAUDE.md`, `README.md`, `LICE
 Makefile                                   All workflows; run `make help`
 vscode-extension/
   package.json, README.md, .vscodeignore   Extension manifest and Marketplace readme
-  src/extension.js                         Commands that apply/restore recommended user settings
+  src/extension.js                         Settings commands + greys out dependency/build folder names
+  src/dimmed-folders.js                    The greyed-out folder names (shared by icons and extension)
   scripts/build-themes.mjs                 SOURCE OF TRUTH for colors → themes/*.json
   scripts/build-icons.mjs                  SOURCE OF TRUTH for icons (ICONS/FOLDERS tables) → icons/**
   scripts/validate.mjs                     Checks JSON, color formats, icon paths/references
@@ -45,11 +46,12 @@ For an icon sheet, run `node vscode-extension/scripts/preview-icons.mjs`.
 - **Icons**: to add a file type, add an entry to `ICONS` in `build-icons.mjs` with `ext` / `names` / `langs`. Keys are matched lowercase, and duplicates throw at build time. Reuse the existing shape helpers (`badge`, `page`, `image`, `gear`, …) and the named palette colors so the set stays consistent.
 - **Icon design rules**: 16×16 viewBox, 1px strokes on half-pixel coordinates (crisp at 1×), tinted fill, and badge labels of no more than 3 characters.
 - **Don't copy JetBrains' actual icon SVGs or logos.** The icons are original drawings in a similar style.
-- The extension activates lazily, on command only. Keep `activationEvents` empty.
+- The extension activates `onStartupFinished`. It has to start with VS Code because it greys out dependency and build folder names (`node_modules`, `dist`, …) itself: git's ignored color is only computed once a folder is expanded, so it can't be relied on. Keep startup work trivial.
+- The list of greyed-out folders lives only in `vscode-extension/src/dimmed-folders.js`. Both the folder icon (`build-icons.mjs`) and the label color (`extension.js`) read it.
 - Bump `version` in `vscode-extension/package.json` for every change you intend to install, so VS Code picks it up.
 
 ## Verifying visual changes
 
 There are no unit tests. Verify like this:
 1. `make package`. This regenerates the files and runs the validator.
-2. Run `node vscode-extension/scripts/preview-icons.mjs` for icons, or `make dev` and open some real files for the theme.
+2. Run `node vscode-extension/scripts/preview-icons.mjs` for icons, or `make vscode` (with the user's OK) and open some real files for the theme.

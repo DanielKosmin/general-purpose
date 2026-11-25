@@ -402,6 +402,7 @@ function workbench(p) {
     'gitDecoration.deletedResourceForeground': u.gitDeleted,
     'gitDecoration.untrackedResourceForeground': u.gitUntracked,
     'gitDecoration.ignoredResourceForeground': u.gitIgnored,
+    'jbLook.dimmedForeground': u.gitIgnored, // label color for src/dimmed-folders.js (set by the extension, not git)
     'gitDecoration.conflictingResourceForeground': u.gitConflict,
     'gitDecoration.renamedResourceForeground': u.gitModified,
     'gitDecoration.stageModifiedResourceForeground': u.gitModified,
