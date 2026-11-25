@@ -1,0 +1,16 @@
+# Always LF line endings in the repo and the working tree, on every OS. Never CRLF.
+* text=auto eol=lf
+
+# Binary files: no line-ending conversion or text diffs.
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
+*.webp binary
+*.woff binary
+*.woff2 binary
+*.ttf  binary
+*.otf  binary
+*.vsix binary
+*.zip  binary

@@ -1,0 +1,60 @@
+{
+  "name": "jb-look",
+  "displayName": "JB Look — IntelliJ-style Theme & Icons",
+  "description": "Dark color theme, file icons and editor settings modeled on the JetBrains New UI.",
+  "version": "0.3.0",
+  "publisher": "local",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "icon theme",
+    "intellij",
+    "new ui",
+    "dark"
+  ],
+  "main": "./src/extension.js",
+  "activationEvents": [],
+  "contributes": {
+    "themes": [
+      {
+        "label": "JB Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/jb-dark-color-theme.json"
+      }
+    ],
+    "iconThemes": [
+      {
+        "id": "jb-icons",
+        "label": "JB Icons",
+        "path": "./icons/jb-icon-theme.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "jbLook.applyRecommendedSettings",
+        "title": "Apply Recommended IntelliJ-style Settings",
+        "category": "JB Look"
+      },
+      {
+        "command": "jbLook.restoreSettings",
+        "title": "Restore Settings From Before JB Look",
+        "category": "JB Look"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "node scripts/build-themes.mjs && node scripts/build-icons.mjs",
+    "validate": "node scripts/validate.mjs",
+    "package": "vsce package --allow-missing-repository --skip-license --out dist/"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^3.2.1"
+  }
+}

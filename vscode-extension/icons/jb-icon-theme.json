@@ -1,0 +1,721 @@
+{
+  "hidesExplorerArrows": false,
+  "iconDefinitions": {
+    "file": {
+      "iconPath": "./dark/file.svg"
+    },
+    "text": {
+      "iconPath": "./dark/text.svg"
+    },
+    "typescript": {
+      "iconPath": "./dark/typescript.svg"
+    },
+    "typescript-def": {
+      "iconPath": "./dark/typescript-def.svg"
+    },
+    "tsx": {
+      "iconPath": "./dark/tsx.svg"
+    },
+    "javascript": {
+      "iconPath": "./dark/javascript.svg"
+    },
+    "jsx": {
+      "iconPath": "./dark/jsx.svg"
+    },
+    "json": {
+      "iconPath": "./dark/json.svg"
+    },
+    "python": {
+      "iconPath": "./dark/python.svg"
+    },
+    "notebook": {
+      "iconPath": "./dark/notebook.svg"
+    },
+    "java": {
+      "iconPath": "./dark/java.svg"
+    },
+    "class": {
+      "iconPath": "./dark/class.svg"
+    },
+    "kotlin": {
+      "iconPath": "./dark/kotlin.svg"
+    },
+    "scala": {
+      "iconPath": "./dark/scala.svg"
+    },
+    "groovy": {
+      "iconPath": "./dark/groovy.svg"
+    },
+    "go": {
+      "iconPath": "./dark/go.svg"
+    },
+    "gomod": {
+      "iconPath": "./dark/gomod.svg"
+    },
+    "rust": {
+      "iconPath": "./dark/rust.svg"
+    },
+    "c": {
+      "iconPath": "./dark/c.svg"
+    },
+    "cpp": {
+      "iconPath": "./dark/cpp.svg"
+    },
+    "header": {
+      "iconPath": "./dark/header.svg"
+    },
+    "csharp": {
+      "iconPath": "./dark/csharp.svg"
+    },
+    "fsharp": {
+      "iconPath": "./dark/fsharp.svg"
+    },
+    "swift": {
+      "iconPath": "./dark/swift.svg"
+    },
+    "objc": {
+      "iconPath": "./dark/objc.svg"
+    },
+    "dart": {
+      "iconPath": "./dark/dart.svg"
+    },
+    "ruby": {
+      "iconPath": "./dark/ruby.svg"
+    },
+    "php": {
+      "iconPath": "./dark/php.svg"
+    },
+    "lua": {
+      "iconPath": "./dark/lua.svg"
+    },
+    "r": {
+      "iconPath": "./dark/r.svg"
+    },
+    "elixir": {
+      "iconPath": "./dark/elixir.svg"
+    },
+    "haskell": {
+      "iconPath": "./dark/haskell.svg"
+    },
+    "clojure": {
+      "iconPath": "./dark/clojure.svg"
+    },
+    "zig": {
+      "iconPath": "./dark/zig.svg"
+    },
+    "sql": {
+      "iconPath": "./dark/sql.svg"
+    },
+    "graphql": {
+      "iconPath": "./dark/graphql.svg"
+    },
+    "proto": {
+      "iconPath": "./dark/proto.svg"
+    },
+    "terraform": {
+      "iconPath": "./dark/terraform.svg"
+    },
+    "shell": {
+      "iconPath": "./dark/shell.svg"
+    },
+    "powershell": {
+      "iconPath": "./dark/powershell.svg"
+    },
+    "html": {
+      "iconPath": "./dark/html.svg"
+    },
+    "css": {
+      "iconPath": "./dark/css.svg"
+    },
+    "scss": {
+      "iconPath": "./dark/scss.svg"
+    },
+    "less": {
+      "iconPath": "./dark/less.svg"
+    },
+    "vue": {
+      "iconPath": "./dark/vue.svg"
+    },
+    "svelte": {
+      "iconPath": "./dark/svelte.svg"
+    },
+    "astro": {
+      "iconPath": "./dark/astro.svg"
+    },
+    "xml": {
+      "iconPath": "./dark/xml.svg"
+    },
+    "template": {
+      "iconPath": "./dark/template.svg"
+    },
+    "yaml": {
+      "iconPath": "./dark/yaml.svg"
+    },
+    "toml": {
+      "iconPath": "./dark/toml.svg"
+    },
+    "ini": {
+      "iconPath": "./dark/ini.svg"
+    },
+    "env": {
+      "iconPath": "./dark/env.svg"
+    },
+    "csv": {
+      "iconPath": "./dark/csv.svg"
+    },
+    "markdown": {
+      "iconPath": "./dark/markdown.svg"
+    },
+    "rst": {
+      "iconPath": "./dark/rst.svg"
+    },
+    "pdf": {
+      "iconPath": "./dark/pdf.svg"
+    },
+    "image": {
+      "iconPath": "./dark/image.svg"
+    },
+    "svg": {
+      "iconPath": "./dark/svg.svg"
+    },
+    "font": {
+      "iconPath": "./dark/font.svg"
+    },
+    "media": {
+      "iconPath": "./dark/media.svg"
+    },
+    "archive": {
+      "iconPath": "./dark/archive.svg"
+    },
+    "binary": {
+      "iconPath": "./dark/binary.svg"
+    },
+    "lock": {
+      "iconPath": "./dark/lock.svg"
+    },
+    "key": {
+      "iconPath": "./dark/key.svg"
+    },
+    "diff": {
+      "iconPath": "./dark/diff.svg"
+    },
+    "git": {
+      "iconPath": "./dark/git.svg"
+    },
+    "ignore": {
+      "iconPath": "./dark/ignore.svg"
+    },
+    "npm": {
+      "iconPath": "./dark/npm.svg"
+    },
+    "tsconfig": {
+      "iconPath": "./dark/tsconfig.svg"
+    },
+    "docker": {
+      "iconPath": "./dark/docker.svg"
+    },
+    "make": {
+      "iconPath": "./dark/make.svg"
+    },
+    "readme": {
+      "iconPath": "./dark/readme.svg"
+    },
+    "license": {
+      "iconPath": "./dark/license.svg"
+    },
+    "changelog": {
+      "iconPath": "./dark/changelog.svg"
+    },
+    "ai": {
+      "iconPath": "./dark/ai.svg"
+    },
+    "config-js": {
+      "iconPath": "./dark/config-js.svg"
+    },
+    "python-config": {
+      "iconPath": "./dark/python-config.svg"
+    },
+    "cargo": {
+      "iconPath": "./dark/cargo.svg"
+    },
+    "gradle-build": {
+      "iconPath": "./dark/gradle-build.svg"
+    },
+    "folder": {
+      "iconPath": "./dark/folder.svg"
+    },
+    "folder-open": {
+      "iconPath": "./dark/folder-open.svg"
+    },
+    "folder-dimmed": {
+      "iconPath": "./dark/folder-dimmed.svg"
+    },
+    "folder-dimmed-open": {
+      "iconPath": "./dark/folder-dimmed-open.svg"
+    }
+  },
+  "file": "file",
+  "folder": "folder",
+  "folderExpanded": "folder-open",
+  "rootFolder": "folder",
+  "rootFolderExpanded": "folder-open",
+  "fileExtensions": {
+    "txt": "text",
+    "text": "text",
+    "log": "text",
+    "out": "text",
+    "ts": "typescript",
+    "mts": "typescript",
+    "cts": "typescript",
+    "d.ts": "typescript-def",
+    "d.mts": "typescript-def",
+    "d.cts": "typescript-def",
+    "tsx": "tsx",
+    "js": "javascript",
+    "mjs": "javascript",
+    "cjs": "javascript",
+    "jsx": "jsx",
+    "json": "json",
+    "jsonc": "json",
+    "json5": "json",
+    "jsonl": "json",
+    "webmanifest": "json",
+    "py": "python",
+    "pyi": "python",
+    "pyw": "python",
+    "ipynb": "notebook",
+    "java": "java",
+    "class": "class",
+    "jar": "class",
+    "kt": "kotlin",
+    "kts": "kotlin",
+    "scala": "scala",
+    "sc": "scala",
+    "sbt": "scala",
+    "groovy": "groovy",
+    "gradle": "groovy",
+    "go": "go",
+    "rs": "rust",
+    "c": "c",
+    "cpp": "cpp",
+    "cc": "cpp",
+    "cxx": "cpp",
+    "c++": "cpp",
+    "ino": "cpp",
+    "h": "header",
+    "hpp": "header",
+    "hh": "header",
+    "hxx": "header",
+    "h++": "header",
+    "cs": "csharp",
+    "csx": "csharp",
+    "fs": "fsharp",
+    "fsi": "fsharp",
+    "fsx": "fsharp",
+    "swift": "swift",
+    "m": "objc",
+    "mm": "objc",
+    "dart": "dart",
+    "rb": "ruby",
+    "erb": "ruby",
+    "gemspec": "ruby",
+    "rake": "ruby",
+    "php": "php",
+    "phtml": "php",
+    "lua": "lua",
+    "r": "r",
+    "rmd": "r",
+    "ex": "elixir",
+    "exs": "elixir",
+    "heex": "elixir",
+    "hs": "haskell",
+    "lhs": "haskell",
+    "clj": "clojure",
+    "cljs": "clojure",
+    "cljc": "clojure",
+    "edn": "clojure",
+    "zig": "zig",
+    "sql": "sql",
+    "psql": "sql",
+    "mysql": "sql",
+    "sqlite": "sql",
+    "db": "sql",
+    "graphql": "graphql",
+    "gql": "graphql",
+    "proto": "proto",
+    "tf": "terraform",
+    "tfvars": "terraform",
+    "hcl": "terraform",
+    "sh": "shell",
+    "bash": "shell",
+    "zsh": "shell",
+    "fish": "shell",
+    "ksh": "shell",
+    "command": "shell",
+    "ps1": "powershell",
+    "psm1": "powershell",
+    "psd1": "powershell",
+    "bat": "powershell",
+    "cmd": "powershell",
+    "html": "html",
+    "htm": "html",
+    "xhtml": "html",
+    "css": "css",
+    "scss": "scss",
+    "sass": "scss",
+    "less": "less",
+    "vue": "vue",
+    "svelte": "svelte",
+    "astro": "astro",
+    "xml": "xml",
+    "xsd": "xml",
+    "xsl": "xml",
+    "xslt": "xml",
+    "plist": "xml",
+    "csproj": "xml",
+    "fsproj": "xml",
+    "iml": "xml",
+    "pom": "xml",
+    "hbs": "template",
+    "handlebars": "template",
+    "mustache": "template",
+    "njk": "template",
+    "jinja": "template",
+    "j2": "template",
+    "tmpl": "template",
+    "liquid": "template",
+    "yaml": "yaml",
+    "yml": "yaml",
+    "toml": "toml",
+    "ini": "ini",
+    "cfg": "ini",
+    "conf": "ini",
+    "properties": "ini",
+    "editorconfig": "ini",
+    "env": "env",
+    "csv": "csv",
+    "tsv": "csv",
+    "xlsx": "csv",
+    "xls": "csv",
+    "md": "markdown",
+    "markdown": "markdown",
+    "mdx": "markdown",
+    "mdc": "markdown",
+    "rst": "rst",
+    "adoc": "rst",
+    "asciidoc": "rst",
+    "tex": "rst",
+    "org": "rst",
+    "pdf": "pdf",
+    "png": "image",
+    "jpg": "image",
+    "jpeg": "image",
+    "gif": "image",
+    "webp": "image",
+    "bmp": "image",
+    "ico": "image",
+    "icns": "image",
+    "tif": "image",
+    "tiff": "image",
+    "avif": "image",
+    "heic": "image",
+    "svg": "svg",
+    "ttf": "font",
+    "otf": "font",
+    "woff": "font",
+    "woff2": "font",
+    "eot": "font",
+    "mp4": "media",
+    "mov": "media",
+    "webm": "media",
+    "mkv": "media",
+    "avi": "media",
+    "mp3": "media",
+    "wav": "media",
+    "flac": "media",
+    "ogg": "media",
+    "m4a": "media",
+    "zip": "archive",
+    "tar": "archive",
+    "gz": "archive",
+    "tgz": "archive",
+    "bz2": "archive",
+    "xz": "archive",
+    "7z": "archive",
+    "rar": "archive",
+    "vsix": "archive",
+    "whl": "archive",
+    "exe": "binary",
+    "dll": "binary",
+    "so": "binary",
+    "dylib": "binary",
+    "bin": "binary",
+    "o": "binary",
+    "a": "binary",
+    "wasm": "binary",
+    "pyc": "binary",
+    "lock": "lock",
+    "pem": "key",
+    "key": "key",
+    "crt": "key",
+    "cer": "key",
+    "p12": "key",
+    "pfx": "key",
+    "pub": "key",
+    "gpg": "key",
+    "asc": "key",
+    "diff": "diff",
+    "patch": "diff",
+    "dockerfile": "docker",
+    "containerfile": "docker",
+    "mk": "make",
+    "mak": "make"
+  },
+  "fileNames": {
+    "go.mod": "gomod",
+    "go.sum": "gomod",
+    "go.work": "gomod",
+    "gemfile": "ruby",
+    "rakefile": "ruby",
+    ".zshrc": "shell",
+    ".bashrc": "shell",
+    ".bash_profile": "shell",
+    ".zprofile": "shell",
+    ".profile": "shell",
+    ".editorconfig": "ini",
+    ".nvmrc": "ini",
+    ".yarnrc": "ini",
+    ".prettierrc": "ini",
+    ".eslintrc": "ini",
+    ".babelrc": "ini",
+    ".browserslistrc": "ini",
+    ".env": "env",
+    ".env.local": "env",
+    ".env.development": "env",
+    ".env.production": "env",
+    ".env.test": "env",
+    ".env.example": "env",
+    ".envrc": "env",
+    "package-lock.json": "lock",
+    "yarn.lock": "lock",
+    "pnpm-lock.yaml": "lock",
+    "bun.lockb": "lock",
+    "bun.lock": "lock",
+    "cargo.lock": "lock",
+    "poetry.lock": "lock",
+    "uv.lock": "lock",
+    "gemfile.lock": "lock",
+    "composer.lock": "lock",
+    "pipfile.lock": "lock",
+    "flake.lock": "lock",
+    ".gitignore": "git",
+    ".gitattributes": "git",
+    ".gitmodules": "git",
+    ".gitkeep": "git",
+    ".git-blame-ignore-revs": "git",
+    ".mailmap": "git",
+    ".dockerignore": "ignore",
+    ".npmignore": "ignore",
+    ".prettierignore": "ignore",
+    ".eslintignore": "ignore",
+    ".vscodeignore": "ignore",
+    ".ignore": "ignore",
+    "package.json": "npm",
+    ".npmrc": "npm",
+    "tsconfig.json": "tsconfig",
+    "jsconfig.json": "tsconfig",
+    "tsconfig.base.json": "tsconfig",
+    "tsconfig.build.json": "tsconfig",
+    "dockerfile": "docker",
+    "containerfile": "docker",
+    "docker-compose.yml": "docker",
+    "docker-compose.yaml": "docker",
+    "compose.yml": "docker",
+    "compose.yaml": "docker",
+    "makefile": "make",
+    "gnumakefile": "make",
+    "justfile": "make",
+    "cmakelists.txt": "make",
+    "meson.build": "make",
+    "readme.md": "readme",
+    "readme": "readme",
+    "readme.txt": "readme",
+    "readme.rst": "readme",
+    "license": "license",
+    "license.md": "license",
+    "license.txt": "license",
+    "licence": "license",
+    "copying": "license",
+    "notice": "license",
+    "changelog.md": "changelog",
+    "changelog": "changelog",
+    "changes.md": "changelog",
+    "history.md": "changelog",
+    "claude.md": "ai",
+    "agents.md": "ai",
+    ".cursorrules": "ai",
+    "copilot-instructions.md": "ai",
+    "gemini.md": "ai",
+    "vite.config.ts": "config-js",
+    "vite.config.js": "config-js",
+    "vite.config.mjs": "config-js",
+    "webpack.config.js": "config-js",
+    "rollup.config.js": "config-js",
+    "rollup.config.mjs": "config-js",
+    "next.config.js": "config-js",
+    "next.config.mjs": "config-js",
+    "next.config.ts": "config-js",
+    "tailwind.config.js": "config-js",
+    "tailwind.config.ts": "config-js",
+    "postcss.config.js": "config-js",
+    "postcss.config.mjs": "config-js",
+    "eslint.config.js": "config-js",
+    "eslint.config.mjs": "config-js",
+    "prettier.config.js": "config-js",
+    "babel.config.js": "config-js",
+    "jest.config.js": "config-js",
+    "jest.config.ts": "config-js",
+    "vitest.config.ts": "config-js",
+    "vitest.config.js": "config-js",
+    "svelte.config.js": "config-js",
+    "astro.config.mjs": "config-js",
+    "nuxt.config.ts": "config-js",
+    "pyproject.toml": "python-config",
+    "setup.py": "python-config",
+    "setup.cfg": "python-config",
+    "requirements.txt": "python-config",
+    "requirements-dev.txt": "python-config",
+    "pipfile": "python-config",
+    "tox.ini": "python-config",
+    ".python-version": "python-config",
+    "cargo.toml": "cargo",
+    "build.gradle": "gradle-build",
+    "build.gradle.kts": "gradle-build",
+    "settings.gradle": "gradle-build",
+    "settings.gradle.kts": "gradle-build",
+    "gradle.properties": "gradle-build",
+    "gradlew": "gradle-build",
+    "gradlew.bat": "gradle-build",
+    "pom.xml": "gradle-build"
+  },
+  "languageIds": {
+    "plaintext": "text",
+    "log": "text",
+    "typescript": "typescript",
+    "typescriptreact": "tsx",
+    "javascript": "javascript",
+    "javascriptreact": "jsx",
+    "json": "json",
+    "jsonc": "json",
+    "jsonl": "json",
+    "python": "python",
+    "java": "java",
+    "kotlin": "kotlin",
+    "scala": "scala",
+    "groovy": "groovy",
+    "go": "go",
+    "rust": "rust",
+    "c": "c",
+    "cpp": "cpp",
+    "csharp": "csharp",
+    "fsharp": "fsharp",
+    "swift": "swift",
+    "objective-c": "objc",
+    "objective-cpp": "objc",
+    "dart": "dart",
+    "ruby": "ruby",
+    "php": "php",
+    "lua": "lua",
+    "r": "r",
+    "elixir": "elixir",
+    "haskell": "haskell",
+    "clojure": "clojure",
+    "sql": "sql",
+    "graphql": "graphql",
+    "proto3": "proto",
+    "proto": "proto",
+    "terraform": "terraform",
+    "hcl": "terraform",
+    "shellscript": "shell",
+    "powershell": "powershell",
+    "bat": "powershell",
+    "html": "html",
+    "css": "css",
+    "scss": "scss",
+    "sass": "scss",
+    "less": "less",
+    "vue": "vue",
+    "svelte": "svelte",
+    "astro": "astro",
+    "xml": "xml",
+    "yaml": "yaml",
+    "toml": "toml",
+    "ini": "ini",
+    "properties": "ini",
+    "dotenv": "env",
+    "csv": "csv",
+    "tsv": "csv",
+    "markdown": "markdown",
+    "mdx": "markdown",
+    "diff": "diff",
+    "ignore": "git",
+    "git-commit": "git",
+    "git-rebase": "git",
+    "dockerfile": "docker",
+    "dockercompose": "docker",
+    "makefile": "make",
+    "cmake": "make"
+  },
+  "folderNames": {
+    "node_modules": "folder-dimmed",
+    "dist": "folder-dimmed",
+    "build": "folder-dimmed",
+    "out": "folder-dimmed",
+    "target": "folder-dimmed",
+    ".next": "folder-dimmed",
+    ".nuxt": "folder-dimmed",
+    ".output": "folder-dimmed",
+    ".svelte-kit": "folder-dimmed",
+    ".cache": "folder-dimmed",
+    ".parcel-cache": "folder-dimmed",
+    "coverage": "folder-dimmed",
+    ".nyc_output": "folder-dimmed",
+    "__pycache__": "folder-dimmed",
+    ".venv": "folder-dimmed",
+    "venv": "folder-dimmed",
+    ".tox": "folder-dimmed",
+    ".gradle": "folder-dimmed",
+    ".pytest_cache": "folder-dimmed",
+    ".mypy_cache": "folder-dimmed",
+    ".ruff_cache": "folder-dimmed",
+    ".turbo": "folder-dimmed",
+    "bower_components": "folder-dimmed",
+    ".git": "folder-dimmed"
+  },
+  "folderNamesExpanded": {
+    "node_modules": "folder-dimmed-open",
+    "dist": "folder-dimmed-open",
+    "build": "folder-dimmed-open",
+    "out": "folder-dimmed-open",
+    "target": "folder-dimmed-open",
+    ".next": "folder-dimmed-open",
+    ".nuxt": "folder-dimmed-open",
+    ".output": "folder-dimmed-open",
+    ".svelte-kit": "folder-dimmed-open",
+    ".cache": "folder-dimmed-open",
+    ".parcel-cache": "folder-dimmed-open",
+    "coverage": "folder-dimmed-open",
+    ".nyc_output": "folder-dimmed-open",
+    "__pycache__": "folder-dimmed-open",
+    ".venv": "folder-dimmed-open",
+    "venv": "folder-dimmed-open",
+    ".tox": "folder-dimmed-open",
+    ".gradle": "folder-dimmed-open",
+    ".pytest_cache": "folder-dimmed-open",
+    ".mypy_cache": "folder-dimmed-open",
+    ".ruff_cache": "folder-dimmed-open",
+    ".turbo": "folder-dimmed-open",
+    "bower_components": "folder-dimmed-open",
+    ".git": "folder-dimmed-open"
+  }
+}
