@@ -49,8 +49,13 @@ const palettes = {
       lineNumberActive: '#A1A3AB',
       findMatch: '#2D543F',      // SEARCH_RESULT_ATTRIBUTES
       findMatchHighlight: '#114957', // TEXT_SEARCH_RESULT_ATTRIBUTES
-      wordHighlight: '#373B39',  // IDENTIFIER_UNDER_CARET
-      wordHighlightStrong: '#402F33', // WRITE_IDENTIFIER_UNDER_CARET
+      // Brighter than Islands (#373B39 / #402F33), which is too faint to spot. Same hues, plus a border
+      // and scrollbar mark in IntelliJ's own stripe colors for these keys.
+      wordHighlight: '#3E5A4C',       // IDENTIFIER_UNDER_CARET (read usages)
+      wordHighlightBorder: '#5B786A',
+      wordHighlightStrong: '#5C3A46', // WRITE_IDENTIFIER_UNDER_CARET (write usages)
+      wordHighlightStrongBorder: '#BA6387',
+      peekMatch: '#BA975266',         // search-match-bg (Islands), translucent so code stays readable
       bracketMatch: '#43454A',
       indentGuide: '#323438',
       indentGuideActive: '#4E5157',
@@ -104,6 +109,10 @@ const palettes = {
       heading: '#CF8E6D',
       link: '#56A8F5',
       todo: '#8BB33D',
+      global: '#C77DBA',     // JS.GLOBAL_VARIABLE (italic)
+      magic: '#B200B2',      // PY.PREDEFINED_DEFINITION / USAGE (__init__, __name__)
+      kwArg: '#AA4926',      // PY.KEYWORD_ARGUMENT
+      namedArg: '#56C1D6',   // KOTLIN_NAMED_ARGUMENT
       invalid: '#F75464',
     },
   },
@@ -233,6 +242,15 @@ function workbench(p) {
     'editor.selectionHighlightBackground': u.wordHighlight,
     'editor.wordHighlightBackground': u.wordHighlight,
     'editor.wordHighlightStrongBackground': u.wordHighlightStrong,
+    'editor.wordHighlightBorder': u.wordHighlightBorder,
+    'editor.wordHighlightStrongBorder': u.wordHighlightStrongBorder,
+    'editor.wordHighlightTextBackground': u.wordHighlight,
+    'editor.wordHighlightTextBorder': u.wordHighlightBorder,
+    'editor.selectionHighlightBorder': u.wordHighlightBorder,
+    'editorOverviewRuler.wordHighlightForeground': u.wordHighlightBorder,
+    'editorOverviewRuler.wordHighlightStrongForeground': u.wordHighlightStrongBorder,
+    'editorOverviewRuler.wordHighlightTextForeground': u.wordHighlightBorder,
+    'editorOverviewRuler.selectionHighlightForeground': u.wordHighlightBorder,
     'editor.findMatchBackground': u.findMatch,
     'editor.findMatchHighlightBackground': u.findMatchHighlight,
     'editor.findRangeHighlightBackground': u.lineHighlight,
@@ -287,11 +305,18 @@ function workbench(p) {
     'editorSuggestWidget.focusHighlightForeground': '#538AF9',
     'peekView.border': u.accent,
     'peekViewEditor.background': u.editorBg,
-    'peekViewEditor.matchHighlightBackground': u.findMatch,
+    'peekViewEditorGutter.background': u.editorBg,
+    'peekViewEditor.matchHighlightBackground': u.peekMatch,
+    'peekViewEditor.matchHighlightBorder': u.wordHighlightBorder,
     'peekViewResult.background': u.popupBg,
+    'peekViewResult.fileForeground': u.fg,
+    'peekViewResult.lineForeground': u.editorFg,
     'peekViewResult.selectionBackground': u.selActive,
-    'peekViewResult.matchHighlightBackground': u.findMatch,
+    'peekViewResult.selectionForeground': u.fg,
+    'peekViewResult.matchHighlightBackground': u.peekMatch,
     'peekViewTitle.background': u.popupBg,
+    'peekViewTitleLabel.foreground': u.fg,
+    'peekViewTitleDescription.foreground': u.muted,
     'diffEditor.insertedTextBackground': u.diffInserted,
     'diffEditor.removedTextBackground': u.diffRemoved,
     'diffEditor.insertedLineBackground': u.diffInserted,
@@ -451,7 +476,10 @@ function tokenColors(s) {
     r('Constants & enum members', ['variable.other.constant', 'variable.other.enummember', 'entity.name.constant', 'constant.other.caps', 'support.constant'], s.field, 'italic'),
     r('Parameters', ['variable.parameter'], s.fg),
     r('self / cls', ['variable.parameter.function.language.special.self', 'variable.language.special.self', 'variable.parameter.function.language.special.cls', 'variable.language.special.cls'], s.self),
-    r('Builtins', ['support.function.builtin', 'support.type.python', 'support.function.magic', 'support.variable.magic'], s.builtin),
+    r('Builtins', ['support.function.builtin', 'support.type.python'], s.builtin),
+    r('Python dunder names', ['support.function.magic.python', 'support.variable.magic.python'], s.magic),
+    r('Python keyword arguments', ['variable.parameter.function-call.python'], s.kwArg),
+    r('Kotlin named arguments', ['variable.parameter.named.kotlin'], s.namedArg),
     r('Annotations & decorators', ['meta.annotation', 'storage.type.annotation', 'punctuation.definition.annotation', 'entity.name.function.decorator', 'meta.decorator', 'punctuation.decorator', 'meta.function.decorator', 'meta.attribute.rust', 'meta.attribute'], s.annotation),
     r('Labels', ['entity.name.label', 'punctuation.definition.label'], s.label),
     r('Tags (HTML/XML/JSX)', ['entity.name.tag', 'support.class.component', 'punctuation.definition.tag'], s.tag),
@@ -478,36 +506,64 @@ function tokenColors(s) {
   ];
 }
 
+// Semantic tokens (from language servers) override TextMate scopes. Per-language rules mirror
+// IntelliJ's per-language color keys, resolved from Islands Dark → Darcula → language scheme files.
 function semanticTokenColors(s) {
+  const JS = ['javascript', 'typescript', 'javascriptreact', 'typescriptreact'];
+  const forLangs = (langs, sel, style) => Object.fromEntries(langs.map((l) => [`${sel}:${l}`, style]));
   return {
-    'function.declaration': s.func,
+    // ---- Defaults (Java-like: DEFAULT_* keys) ----
+    'function.declaration': s.func,          // METHOD_DECLARATION
     'method.declaration': s.func,
-    'function': s.fg,
+    'function': s.fg,                        // METHOD_CALL = identifier
     'method': s.fg,
+    'method.static': { foreground: s.fg, fontStyle: 'italic' }, // STATIC_METHOD
     'class': s.fg,
     'interface': s.fg,
+    'enum': s.fg,
     'type': s.fg,
     'struct': s.fg,
     'namespace': s.fg,
-    'typeParameter': s.typeParam,
+    'typeParameter': s.typeParam,            // TYPE_PARAMETER_NAME
     'parameter': s.fg,
     'variable': s.fg,
-    'property': s.field,
-    'enumMember': { foreground: s.field, fontStyle: 'italic' },
-    'property.static': { foreground: s.field, fontStyle: 'italic' },
-    'method.static': { foreground: s.fg, fontStyle: 'italic' },
+    'property': s.field,                     // INSTANCE_FIELD
+    'property.static': { foreground: s.field, fontStyle: 'italic' }, // STATIC_FIELD
     'variable.static': { foreground: s.field, fontStyle: 'italic' },
+    'enumMember': { foreground: s.field, fontStyle: 'italic' },      // static final
     'decorator': s.annotation,
+    'annotation': s.annotation,
     'macro': s.annotation,
     'label': s.label,
-    'selfParameter': s.self,
-    'selfKeyword': s.self,
     'keyword': s.keyword,
-    'builtinConstant': s.keyword,
     'number': s.number,
     'string': s.string,
     'regexp': s.regex,
     'comment': s.comment,
+
+    // ---- JavaScript / TypeScript (JS.* keys) ----
+    ...forLangs(JS, 'function', s.func),                 // JS.GLOBAL_FUNCTION: calls are blue too
+    ...forLangs(JS, 'method', s.func),                   // JS.INSTANCE_MEMBER_FUNCTION
+    ...forLangs(JS, 'method.static', { foreground: s.func, fontStyle: 'italic' }),
+    ...forLangs(JS, 'variable', { foreground: s.global, fontStyle: 'italic' }), // JS.GLOBAL_VARIABLE
+    ...forLangs(JS, 'variable.local', s.fg),             // JS.LOCAL_VARIABLE
+    ...forLangs(JS, 'variable.defaultLibrary', s.fg),    // console, window, …
+    ...forLangs(JS, 'parameter', s.fg),
+
+    // ---- Python (PY.* keys) ----
+    'property:python': s.fg,                 // PyCharm doesn't color attributes
+    'variable:python': s.fg,
+    'selfParameter:python': s.self,          // PY.SELF_PARAMETER
+    'clsParameter:python': s.self,
+    'magicFunction:python': s.magic,         // PY.PREDEFINED_DEFINITION
+    '*.builtin:python': s.builtin,           // PY.BUILTIN_NAME
+    'builtinConstant:python': s.keyword,     // True / False / None
+    'function.builtin:python': s.builtin,
+    'class.builtin:python': s.builtin,
+
+    // ---- Kotlin ----
+    'function:kotlin': { foreground: s.fg, fontStyle: 'italic' }, // KOTLIN_PACKAGE_FUNCTION_CALL
+    'method:kotlin': s.fg,
   };
 }
 

@@ -1,6 +1,7 @@
 // @ts-check
 const vscode = require('vscode');
 const DIMMED_FOLDERS = new Set(require('./dimmed-folders'));
+const { showUsages, gotoDeclarationOrUsages } = require('./show-usages');
 
 const BACKUP_KEY = 'jbLook.settingsBackup';
 const DARK = 'JB Dark';
@@ -41,6 +42,8 @@ function activate(context) {
   context.subscriptions.push(
     vscode.commands.registerCommand('jbLook.applyRecommendedSettings', () => applySettings(context)),
     vscode.commands.registerCommand('jbLook.restoreSettings', () => restoreSettings(context)),
+    vscode.commands.registerCommand('jbLook.showUsages', showUsages),
+    vscode.commands.registerCommand('jbLook.gotoDeclarationOrUsages', gotoDeclarationOrUsages),
     // Grey out dependency/build folders by name. Git's "ignored" color is computed lazily (only once a
     // folder has been expanded), so relying on it alone leaves node_modules etc. un-greyed until clicked.
     vscode.window.registerFileDecorationProvider({

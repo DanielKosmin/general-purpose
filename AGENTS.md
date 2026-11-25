@@ -11,6 +11,7 @@ Makefile                                   All workflows; run `make help`
 vscode-extension/
   package.json, README.md, .vscodeignore   Extension manifest and Marketplace readme
   src/extension.js                         Settings commands + greys out dependency/build folder names
+  src/show-usages.js                       IntelliJ-style Show Usages popup
   src/dimmed-folders.js                    The greyed-out folder names (shared by icons and extension)
   scripts/build-themes.mjs                 SOURCE OF TRUTH for colors → themes/*.json
   scripts/build-icons.mjs                  SOURCE OF TRUTH for icons (ICONS/FOLDERS tables) → icons/**
@@ -25,6 +26,9 @@ A VS Code extension that makes VS Code look like a JetBrains IDE with the New UI
 
 - **Color theme**: `JB Dark` only (no light theme, on purpose). It matches JetBrains **Islands Dark**, the default theme since IntelliJ 2025.3. Dark "islands" (editor, side bar, panel: `#191A1C`) sit on a lighter frame (title, activity bar, status bar: `#26282C`). The colors come from `ManyIslandsDark.theme.json` and `IslandSchemeDark.xml` in `JetBrains/intellij-community` under `platform/platform-resources/src/themes/islands/`. When you tune colors, check them against those files, not against the older "Dark" New UI theme.
 - **File icon theme**: `jb-icons`. Original 16×16 SVGs in the New UI style: tinted rounded badges for languages. Folders follow IntelliJ: every folder uses the same plain icon (fill `#43454A`, outline `#CED0D6`), with no coloring by name. The only exception is dependency and build-output folders (`node_modules`, `dist`, `.venv`, …), which are greyed out, and git-ignored names are grey too (`gitIgnored`).
+- **Syntax colors are per language**, matching IntelliJ's per-language keys (JS.*, PY.*, Java, Kotlin), mainly through `semanticTokenColors` language selectors (`variable:javascript`). For example, JS/TS global variables are purple italic and JS calls are blue, while Java calls are plain and only declarations are blue. Python attributes aren't colored. To check a value, resolve the key through Islands Dark → Darcula (`DefaultColorSchemesManager.xml`) → the language scheme file (e.g. `python/python-syntax/resources/colorSchemes/PythonDarcula.xml`) → the fallback key in code (`createTextAttributesKey("X", FALLBACK)`). JavaScript's keys are closed-source, so only the Islands overrides are known for it.
+- **Keybindings** (IntelliJ macOS keymap): Back = Cmd+Option+← / Cmd+[, Forward = Cmd+Option+→ / Cmd+]. Show Usages = Cmd+Option+F7. Go to Declaration or Usages = Cmd+B.
+- **Show Usages popup** (`src/show-usages.js`): an IntelliJ-style floating list of usages, grouped by file, with live preview; Esc returns to where you started. Cmd+B on a declaration opens it, and on a usage it jumps to the declaration. **Cmd+click can't open it**: `editor.gotoLocation.alternativeDefinitionCommand` only accepts VS Code's built-in navigation actions and silently ignores extension commands, which breaks Cmd+click (checked in `goToCommands.ts`). Don't set it.
 - **Commands**: `JB Look: Apply Recommended IntelliJ-style Settings` and `JB Look: Restore Settings From Before JB Look`.
 
 There's no runtime dependency and no bundler. The extension is plain CommonJS.

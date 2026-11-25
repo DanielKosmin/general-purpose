@@ -2,7 +2,7 @@
   "name": "jb-look",
   "displayName": "JB Look — IntelliJ-style Theme & Icons",
   "description": "Dark color theme, file icons and editor settings modeled on the JetBrains New UI.",
-  "version": "0.4.0",
+  "version": "0.7.0",
   "publisher": "local",
   "license": "MIT",
   "private": true,
@@ -48,6 +48,16 @@
         "command": "jbLook.restoreSettings",
         "title": "Restore Settings From Before JB Look",
         "category": "JB Look"
+      },
+      {
+        "command": "jbLook.showUsages",
+        "title": "Show Usages",
+        "category": "JB Look"
+      },
+      {
+        "command": "jbLook.gotoDeclarationOrUsages",
+        "title": "Go to Declaration or Usages",
+        "category": "JB Look"
       }
     ],
     "colors": [
@@ -59,6 +69,34 @@
           "light": "#8C8C8C",
           "highContrast": "#6F737A"
         }
+      }
+    ],
+    "keybindings": [
+      {
+        "key": "cmd+alt+left",
+        "command": "workbench.action.navigateBack"
+      },
+      {
+        "key": "cmd+alt+right",
+        "command": "workbench.action.navigateForward"
+      },
+      {
+        "key": "cmd+[",
+        "command": "workbench.action.navigateBack"
+      },
+      {
+        "key": "cmd+]",
+        "command": "workbench.action.navigateForward"
+      },
+      {
+        "key": "cmd+alt+f7",
+        "command": "jbLook.showUsages",
+        "when": "editorTextFocus"
+      },
+      {
+        "key": "cmd+b",
+        "command": "jbLook.gotoDeclarationOrUsages",
+        "when": "editorTextFocus"
       }
     ]
   },

@@ -107,9 +107,18 @@
     "editor.lineHighlightBorder": "#00000000",
     "editor.selectionBackground": "#214283",
     "editor.inactiveSelectionBackground": "#21428380",
-    "editor.selectionHighlightBackground": "#373B39",
-    "editor.wordHighlightBackground": "#373B39",
-    "editor.wordHighlightStrongBackground": "#402F33",
+    "editor.selectionHighlightBackground": "#3E5A4C",
+    "editor.wordHighlightBackground": "#3E5A4C",
+    "editor.wordHighlightStrongBackground": "#5C3A46",
+    "editor.wordHighlightBorder": "#5B786A",
+    "editor.wordHighlightStrongBorder": "#BA6387",
+    "editor.wordHighlightTextBackground": "#3E5A4C",
+    "editor.wordHighlightTextBorder": "#5B786A",
+    "editor.selectionHighlightBorder": "#5B786A",
+    "editorOverviewRuler.wordHighlightForeground": "#5B786A",
+    "editorOverviewRuler.wordHighlightStrongForeground": "#BA6387",
+    "editorOverviewRuler.wordHighlightTextForeground": "#5B786A",
+    "editorOverviewRuler.selectionHighlightForeground": "#5B786A",
     "editor.findMatchBackground": "#2D543F",
     "editor.findMatchHighlightBackground": "#114957",
     "editor.findRangeHighlightBackground": "#1F2024",
@@ -162,11 +171,18 @@
     "editorSuggestWidget.focusHighlightForeground": "#538AF9",
     "peekView.border": "#3871E1",
     "peekViewEditor.background": "#191A1C",
-    "peekViewEditor.matchHighlightBackground": "#2D543F",
+    "peekViewEditorGutter.background": "#191A1C",
+    "peekViewEditor.matchHighlightBackground": "#BA975266",
+    "peekViewEditor.matchHighlightBorder": "#5B786A",
     "peekViewResult.background": "#26282C",
+    "peekViewResult.fileForeground": "#D1D3D9",
+    "peekViewResult.lineForeground": "#BCBEC4",
     "peekViewResult.selectionBackground": "#2A4371",
-    "peekViewResult.matchHighlightBackground": "#2D543F",
+    "peekViewResult.selectionForeground": "#D1D3D9",
+    "peekViewResult.matchHighlightBackground": "#BA975266",
     "peekViewTitle.background": "#26282C",
+    "peekViewTitleLabel.foreground": "#D1D3D9",
+    "peekViewTitleDescription.foreground": "#9FA2A8",
     "diffEditor.insertedTextBackground": "#294436AA",
     "diffEditor.removedTextBackground": "#484A4A88",
     "diffEditor.insertedLineBackground": "#294436AA",
@@ -536,12 +552,38 @@
       "name": "Builtins",
       "scope": [
         "support.function.builtin",
-        "support.type.python",
-        "support.function.magic",
-        "support.variable.magic"
+        "support.type.python"
       ],
       "settings": {
         "foreground": "#8888C6"
+      }
+    },
+    {
+      "name": "Python dunder names",
+      "scope": [
+        "support.function.magic.python",
+        "support.variable.magic.python"
+      ],
+      "settings": {
+        "foreground": "#B200B2"
+      }
+    },
+    {
+      "name": "Python keyword arguments",
+      "scope": [
+        "variable.parameter.function-call.python"
+      ],
+      "settings": {
+        "foreground": "#AA4926"
+      }
+    },
+    {
+      "name": "Kotlin named arguments",
+      "scope": [
+        "variable.parameter.named.kotlin"
+      ],
+      "settings": {
+        "foreground": "#56C1D6"
       }
     },
     {
@@ -799,8 +841,13 @@
     "method.declaration": "#56A8F5",
     "function": "#BCBEC4",
     "method": "#BCBEC4",
+    "method.static": {
+      "foreground": "#BCBEC4",
+      "fontStyle": "italic"
+    },
     "class": "#BCBEC4",
     "interface": "#BCBEC4",
+    "enum": "#BCBEC4",
     "type": "#BCBEC4",
     "struct": "#BCBEC4",
     "namespace": "#BCBEC4",
@@ -808,32 +855,92 @@
     "parameter": "#BCBEC4",
     "variable": "#BCBEC4",
     "property": "#C77DBB",
-    "enumMember": {
-      "foreground": "#C77DBB",
-      "fontStyle": "italic"
-    },
     "property.static": {
       "foreground": "#C77DBB",
-      "fontStyle": "italic"
-    },
-    "method.static": {
-      "foreground": "#BCBEC4",
       "fontStyle": "italic"
     },
     "variable.static": {
       "foreground": "#C77DBB",
       "fontStyle": "italic"
     },
+    "enumMember": {
+      "foreground": "#C77DBB",
+      "fontStyle": "italic"
+    },
     "decorator": "#B3AE60",
+    "annotation": "#B3AE60",
     "macro": "#B3AE60",
     "label": "#32B8AF",
-    "selfParameter": "#94558D",
-    "selfKeyword": "#94558D",
     "keyword": "#CF8E6D",
-    "builtinConstant": "#CF8E6D",
     "number": "#2AACB8",
     "string": "#6AAB73",
     "regexp": "#42C3D4",
-    "comment": "#7A7E85"
+    "comment": "#7A7E85",
+    "function:javascript": "#56A8F5",
+    "function:typescript": "#56A8F5",
+    "function:javascriptreact": "#56A8F5",
+    "function:typescriptreact": "#56A8F5",
+    "method:javascript": "#56A8F5",
+    "method:typescript": "#56A8F5",
+    "method:javascriptreact": "#56A8F5",
+    "method:typescriptreact": "#56A8F5",
+    "method.static:javascript": {
+      "foreground": "#56A8F5",
+      "fontStyle": "italic"
+    },
+    "method.static:typescript": {
+      "foreground": "#56A8F5",
+      "fontStyle": "italic"
+    },
+    "method.static:javascriptreact": {
+      "foreground": "#56A8F5",
+      "fontStyle": "italic"
+    },
+    "method.static:typescriptreact": {
+      "foreground": "#56A8F5",
+      "fontStyle": "italic"
+    },
+    "variable:javascript": {
+      "foreground": "#C77DBA",
+      "fontStyle": "italic"
+    },
+    "variable:typescript": {
+      "foreground": "#C77DBA",
+      "fontStyle": "italic"
+    },
+    "variable:javascriptreact": {
+      "foreground": "#C77DBA",
+      "fontStyle": "italic"
+    },
+    "variable:typescriptreact": {
+      "foreground": "#C77DBA",
+      "fontStyle": "italic"
+    },
+    "variable.local:javascript": "#BCBEC4",
+    "variable.local:typescript": "#BCBEC4",
+    "variable.local:javascriptreact": "#BCBEC4",
+    "variable.local:typescriptreact": "#BCBEC4",
+    "variable.defaultLibrary:javascript": "#BCBEC4",
+    "variable.defaultLibrary:typescript": "#BCBEC4",
+    "variable.defaultLibrary:javascriptreact": "#BCBEC4",
+    "variable.defaultLibrary:typescriptreact": "#BCBEC4",
+    "parameter:javascript": "#BCBEC4",
+    "parameter:typescript": "#BCBEC4",
+    "parameter:javascriptreact": "#BCBEC4",
+    "parameter:typescriptreact": "#BCBEC4",
+    "property:python": "#BCBEC4",
+    "variable:python": "#BCBEC4",
+    "selfParameter:python": "#94558D",
+    "clsParameter:python": "#94558D",
+    "magicFunction:python": "#B200B2",
+    "*.builtin:python": "#8888C6",
+    "builtinConstant:python": "#CF8E6D",
+    "function.builtin:python": "#8888C6",
+    "class.builtin:python": "#8888C6",
+    "function:kotlin": {
+      "foreground": "#BCBEC4",
+      "fontStyle": "italic"
+    },
+    "method:kotlin": "#BCBEC4"
   }
 }
